@@ -1,30 +1,194 @@
 # ❤️ ECG-Based Deep Learning System for Heart Disease Classification
 
-An end-to-end Deep Learning system that classifies heart diseases using ECG signals/images. This project leverages advanced neural networks to automatically detect cardiac abnormalities and assist in early diagnosis.
+## 📌 Overview
+
+Cardiovascular diseases (CVDs) are one of the leading causes of death worldwide. ECG (Electrocardiogram) analysis is a crucial diagnostic tool, but traditional manual interpretation is time-consuming, subjective, and prone to noise and artifacts in scanned reports.
+
+This project presents a **hybrid deep learning + machine learning framework** that automatically classifies ECG images into multiple heart disease categories with high accuracy.
 
 ---
 
-## 📌 Project Overview
+## 🚀 Key Features
 
-Electrocardiogram (ECG) signals are critical for diagnosing cardiovascular diseases. Manual interpretation requires expertise and is time-consuming.
-
-This project aims to:
-- Automate ECG analysis using Deep Learning
-- Classify multiple heart conditions
-- Improve diagnostic accuracy and speed
-
-Deep learning models, especially CNNs, are highly effective in capturing patterns in ECG signals and detecting abnormalities. :contentReference[oaicite:0]{index=0}
+* 🔄 **Image-to-Signal Transformation** (ECG Image → 1D Signal)
+* 🧠 **Vision Transformer (ViT)** for deep feature extraction
+* ⚙️ **Stacked Ensemble Learning** (SVC + Logistic Regression)
+* 📉 **PCA for Dimensionality Reduction** (3060 → ~400 features)
+* 📊 High performance with **96.77% accuracy**
+* 💻 Simple UI for ECG image upload and prediction
 
 ---
 
-## 🎯 Objectives
+## 🏗️ Project Structure
 
-- Build a robust ECG classification system  
-- Perform preprocessing and feature extraction  
-- Train Deep Learning models for disease detection  
-- Evaluate model performance using multiple metrics  
-- Provide a scalable and extensible solution  
+```
+📦 ECG-Heart-Disease-Classification
+│── 📂 dataset/                # ECG image dataset
+│── 📂 preprocessing/          # Image cleaning & transformation
+│── 📂 feature_extraction/     # Signal conversion (3060 features)
+│── 📂 models/                 # ML & DL models (ViT, SVC, LR)
+│── 📂 ensemble/               # Stacked ensemble implementation
+│── 📂 evaluation/             # Metrics & confusion matrix
+│── 📂 ui/                     # Streamlined user interface
+│── 📄 main.py / app.py        # Main execution script
+│── 📄 requirements.txt        # Dependencies
+│── 📄 README.md               # Project documentation
+```
 
 ---
 
-## 🗂️ Project Structure
+## ⚙️ Tech Stack
+
+* **Programming Language:** Python
+* **Libraries:** NumPy, OpenCV, Scikit-learn, TensorFlow/PyTorch
+* **Techniques:** PCA, Ensemble Learning, Vision Transformer
+* **Tools:** Jupyter Notebook, VS Code
+
+---
+
+## 📊 Dataset
+
+* **Source:** Mendeley 12-Lead ECG Image Dataset
+* **Total Records:** 929 ECG images
+* **Classes:**
+
+  * Normal
+  * Myocardial Infarction (MI)
+  * Abnormal Heartbeat
+  * Prior MI
+
+---
+
+## 🔬 Methodology
+
+### Step 1: Image Preprocessing
+
+* Grayscale conversion
+* Noise removal (Gaussian + Morphological filtering)
+* Otsu thresholding
+* Lead segmentation
+
+### Step 2: Image → Signal Conversion
+
+* Contour-based waveform extraction
+* Convert ECG to **1D signal (3060 features)**
+
+### Step 3: Feature Optimization
+
+* Standardization
+* PCA → reduce to ~400 features
+
+### Step 4: Model Training
+
+* Vision Transformer (ViT)
+* SVC + Logistic Regression
+
+### Step 5: Stacked Ensemble
+
+* Combine predictions using meta-learner
+
+---
+
+## 📈 Results
+
+| Model                           | Accuracy   | Precision | Recall    | F1-score  |
+| ------------------------------- | ---------- | --------- | --------- | --------- |
+| ViT + CatBoost + XGBoost        | 94.27%     | 94.58     | 93.55     | 93.96     |
+| ViT + RF + Extra Trees          | 95.70%     | 96.92     | 94.12     | 95.03     |
+| ViT + SVC + Logistic Regression | **96.77%** | **97.62** | **95.59** | **96.33** |
+
+✅ **Best Model:** Stacked Ensemble (ViT + SVC + Logistic Regression)
+
+---
+
+## 🖥️ How to Run
+
+### 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/Tanishq0505/ECG-based-deep-learning-system-to-classify-heart-diseases.git
+cd ECG-based-deep-learning-system-to-classify-heart-diseases
+```
+
+### 2️⃣ Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3️⃣ Run Project
+
+```bash
+python app.py
+```
+
+---
+
+## 📸 Demo Flow
+
+1. Upload ECG Image
+2. Preprocessing & Noise Removal
+3. Image → Signal Conversion
+4. Feature Reduction (PCA)
+5. Model Prediction
+6. Output: Predicted Class
+
+---
+
+## 🎯 Applications
+
+* 🏥 Clinical decision support systems
+* 📱 Telemedicine & remote diagnosis
+* 🔬 Medical research & diagnostics
+* ⚡ Automated ECG interpretation
+
+---
+
+## ⚠️ Limitations
+
+* Limited dataset size
+* Computational complexity
+* Not yet deployed on cloud
+
+---
+
+## 🔮 Future Work
+
+* Larger and diverse datasets
+* Cloud deployment (AWS/GCP)
+* Real-time ECG analysis
+* Integration with clinical data
+
+---
+
+## 👨‍💻 Contributors
+
+* **Tanishq Anand** – System design & preprocessing
+* **Riya Dublish** – Model development
+* **Sumit Sahni** – Ensemble learning implementation
+* **Siddharth Pathak** – Evaluation & testing
+
+---
+
+## 📜 Research Paper
+
+📄 *A Hybrid Vision Transformer Stacked Ensemble Framework for Automated Multi-Class ECG Image Classification*
+
+---
+
+## ⭐ Acknowledgment
+
+Special thanks to our guide **Dr. Rahul Gupta** for guidance and support.
+
+---
+
+## 📬 Contact
+
+📧 Email: [your-email@example.com](mailto:your-email@example.com)
+🔗 GitHub: https://github.com/Tanishq0505
+
+---
+
+## ⭐ If you like this project
+
+Give it a ⭐ on GitHub!
