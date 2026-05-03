@@ -19,21 +19,6 @@ This project presents a **hybrid deep learning + machine learning framework** th
 
 ---
 
-## 🏗️ Project Structure
-
-```
-📦 ECG-Heart-Disease-Classification
-│── 📂 dataset/                # ECG image dataset
-│── 📂 preprocessing/          # Image cleaning & transformation
-│── 📂 feature_extraction/     # Signal conversion (3060 features)
-│── 📂 models/                 # ML & DL models (ViT, SVC, LR)
-│── 📂 ensemble/               # Stacked ensemble implementation
-│── 📂 evaluation/             # Metrics & confusion matrix
-│── 📂 ui/                     # Streamlined user interface
-│── 📄 main.py / app.py        # Main execution script
-│── 📄 requirements.txt        # Dependencies
-│── 📄 README.md               # Project documentation
-```
 
 ---
 
@@ -91,11 +76,6 @@ This project presents a **hybrid deep learning + machine learning framework** th
 
 ## 📈 Results
 
-| Model                           | Accuracy   | Precision | Recall    | F1-score  |
-| ------------------------------- | ---------- | --------- | --------- | --------- |
-| ViT + CatBoost + XGBoost        | 94.27%     | 94.58     | 93.55     | 93.96     |
-| ViT + RF + Extra Trees          | 95.70%     | 96.92     | 94.12     | 95.03     |
-| ViT + SVC + Logistic Regression | **96.77%** | **97.62** | **95.59** | **96.33** |
 
 ✅ **Best Model:** Stacked Ensemble (ViT + SVC + Logistic Regression)
 
@@ -119,7 +99,7 @@ pip install -r requirements.txt
 ### 3️⃣ Run Project
 
 ```bash
-python app.py
+streamlit run app.py
 ```
 
 ---
@@ -164,9 +144,9 @@ python app.py
 ## 👨‍💻 Contributors
 
 * **Tanishq Anand** – System design & preprocessing
-* **Riya Dublish** – Model development
+* **Riya Dublish** – Dataset Collection Evaluation & testing
 * **Sumit Sahni** – Ensemble learning implementation
-* **Siddharth Pathak** – Evaluation & testing
+* **Siddharth Pathak** – Vit Model development
 
 ---
 
@@ -184,11 +164,8 @@ Special thanks to our guide **Dr. Rahul Gupta** for guidance and support.
 
 ## 📬 Contact
 
-📧 Email: [your-email@example.com](mailto:your-email@example.com)
+
 🔗 GitHub: https://github.com/Tanishq0505
 
 ---
 
-## ⭐ If you like this project
-
-Give it a ⭐ on GitHub!
